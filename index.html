@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine Card</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Main wrapper to center the card on the page -->
+    <main class="page-wrap">
+      <!-- Interactive card container -->
+      <section class="card" id="valentineCard" aria-live="polite">
+        <!-- Initial card content shown before the button click -->
+        <div class="card-content" id="cardContent">
+          <!-- Name heading can be customized directly in HTML -->
+          <h1 class="greeting">Dear Alegría…</h1>
+
+          <!-- Intro cartoon is restored here -->
+          <div class="illustration" aria-hidden="true">
+            <svg
+              viewBox="0 0 320 220"
+              role="img"
+              aria-label="Cartoon couple smiling together"
+            >
+              <!-- Soft backdrop behind characters -->
+              <ellipse cx="160" cy="190" rx="95" ry="20" class="shadow-ellipse" />
+
+              <!-- Left character -->
+              <g transform="translate(70,55)">
+                <circle cx="42" cy="42" r="28" class="skin" />
+                <path d="M14 44 Q40 10 72 42 Q68 18 42 12 Q18 16 14 44" class="hair" />
+                <circle cx="32" cy="44" r="3" class="eye" />
+                <circle cx="52" cy="44" r="3" class="eye" />
+                <path d="M34 56 Q42 64 50 56" class="smile" />
+                <rect x="18" y="72" width="48" height="56" rx="18" class="shirt-pink" />
+                <path d="M18 95 Q42 80 66 95" class="arm" />
+              </g>
+
+              <!-- Right character -->
+              <g transform="translate(170,55)">
+                <circle cx="42" cy="42" r="28" class="skin" />
+                <path d="M15 38 Q42 6 70 38 L70 58 Q44 34 15 58 Z" class="hair-dark" />
+                <circle cx="32" cy="44" r="3" class="eye" />
+                <circle cx="52" cy="44" r="3" class="eye" />
+                <path d="M34 56 Q42 64 50 56" class="smile" />
+                <rect x="18" y="72" width="48" height="56" rx="18" class="shirt-lilac" />
+                <path d="M18 95 Q42 80 66 95" class="arm" />
+              </g>
+
+              <!-- Heart between the couple -->
+              <path
+                d="M160 110 C160 92 182 92 182 110 C182 124 164 136 160 142 C156 136 138 124 138 110 C138 92 160 92 160 110Z"
+                class="center-heart"
+              />
+            </svg>
+          </div>
+
+          <!-- Romantic message text -->
+          <p class="message">I love you more than all the stars, will you be my valentine?</p>
+
+          <!-- Single positive response button (no 'No' option) -->
+          <button class="yes-btn" id="yesButton" type="button">Yes</button>
+
+          <!-- Puzzle launcher where the real photo is now used only in the puzzle -->
+          <button class="puzzle-btn" id="showPuzzleButton" type="button">Play our photo puzzle 🧩</button>
+
+          <!-- Photo puzzle section uses the uploaded real image -->
+          <section class="puzzle" id="puzzleSection" aria-label="Photo puzzle game">
+            <h2>Put our photo back together</h2>
+            <p class="puzzle-copy" id="puzzleStatus">Tap two tiles to swap them.</p>
+            <div class="puzzle-board" id="puzzleBoard"></div>
+          </section>
+        </div>
+
+        <!-- Celebration layer for hearts animation -->
+        <div class="hearts-layer" id="heartsLayer" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <!-- External JavaScript file for interactivity -->
+    <script src="photo-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
